@@ -33,7 +33,7 @@
   </style>
 
 </head>
-<body>
+<body id="body" dir="ltr">
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container">
           <img src="IMG/9PVUs6-LogoMakr.png">
@@ -168,5 +168,21 @@
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script>
+      $(document).ready(function() {
+    $('#toggleDirection').click(function() {
+        const body = $('#body');
+
+        // Überprüfen der aktuellen Leserichtung und umschalten
+        if (body.attr('dir') === 'ltr') {
+            body.attr('dir', 'rtl');
+            $('.container').css('text-align', 'right'); // Text rechtsbündig
+        } else {
+            body.attr('dir', 'ltr');
+            $('.container').css('text-align', 'left'); // Text linksbündig
+        }
+    });
+});
+    </script>
 </body>
 </html>
