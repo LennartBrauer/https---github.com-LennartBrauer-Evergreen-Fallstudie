@@ -11,7 +11,7 @@
 <body class="d-flex flex-column min-vh-100">
   <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container">
-      <img src="9PVUs6-LogoMakr.png">
+      <img src="IMG/9PVUs6-LogoMakr.png">
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -238,5 +238,17 @@
   
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <!--https://www.w3schools.com/bootstrap/bootstrap_filters.asp Quelle des Codes-->
+    <!--In diesem Fall ist der Code bereits relativ sicher, da er $(this).text() verwendet, um den Textinhalt der Tabellenzeilen zu filtern und nicht z.B. innerHTML womit script anwendungen ausgeführt werden können.-->
+    <script>
+      $(document).ready(function(){
+        $("#myInput").on("keyup", function() {
+          var value = $(this).val().toLowerCase();
+          $("#myTable tr").filter(function() {
+            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+          });
+        });
+      });
+      </script>
 </body>
 </html>
